@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import {
   GroupingState,
@@ -13,17 +13,14 @@ import { Grid, Table, TableHeaderRow,
 
 function App() {
 
-  const [getMessage, setGetMessage] = useState("")
+  //  useEffect(()=> {
+  //   fetch('http://127.0.0.1:5000/', {
+  //   'methods': 'GET',})
+  //   .then(response => response.json().then(data => {setGetMessage(data);
+  //   })
+  //   );
 
-
-   useEffect(()=> {
-    fetch('http://127.0.0.1:5000/', {
-    'methods': 'GET',})
-    .then(response => response.json().then(data => {setGetMessage(data);
-    })
-    );
-
-   },[])
+  //  },[])
 
 
 const columns = [
@@ -35,14 +32,13 @@ const columns = [
 const rows = [
   { AssistanceProgramName: 'AcuteMyeloidLeukemia', Eligibletreatments: 'Dexpak', Status: 'close',
 GrantAmount: '$10,000' },
-{ AssistanceProgramName: 'AcuteMyeloidLeukemia', Eligibletreatments: getMessage, Status: 'close',
+{ AssistanceProgramName: 'AcuteMyeloidLeukemia', Eligibletreatments: 'Dexpak', Status: 'close',
 GrantAmount: '$30,000' },
 ];
 
 
 return (
   <Paper>
-    {getMessage}
     <Grid
       rows={rows}
       columns={columns}
