@@ -22,7 +22,6 @@ function App() {
 
   //  },[])
 
-
 const columns = [
   { name: 'AssistanceProgramName', title: 'Assistance Program name' },
   { name: 'Eligibletreatments', title: 'Eligible treatments' },
